@@ -1,4 +1,3 @@
-
 package main
 import "fmt"
 import "sort"
@@ -43,9 +42,11 @@ func main() {
         fmt.Printf("%dº lugar: %s - Nota: %.1f\n", i+1, aluno.nome, aluno.nota)
         notaTotalTurma += aluno.nota
     }
-    
-    mediaFinal = notaTotalTurma / float64(len(turma))
-    
-    fmt.Printf("E a Média Total da turma foi de %.1f",mediaFinal)
-    
+    if len(turma) > 0 {
+        mediaFinal = notaTotalTurma / float64(len(turma))
+        
+        fmt.Printf("E a Média Total da turma foi de %.1f",mediaFinal)
+    }else{
+        fmt.Println("Nenhum aluno/nota encontrado")
+    }
 }
